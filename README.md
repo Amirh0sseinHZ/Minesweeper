@@ -1,6 +1,15 @@
+## Online Demo
+
+Here you can find the [online demo](https://m1nesweeper.netlify.app/) of the game.
+
 ## How to Use
 
-Link `script.js` to your HTML file.  
+Link `script.js` to your HTML file.
+
+```html
+<script src="/script.js" type="module"></script>
+```
+
 Then later:
 
 ```html
