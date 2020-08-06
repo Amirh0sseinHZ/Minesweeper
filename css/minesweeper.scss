@@ -1,0 +1,117 @@
+@import "resources/base";
+
+.minesweeper {
+  font-family: $font-primary, "MS Sans Serif", serif;
+  box-shadow: 0 0 0 3px $white, 0 0 0 15px $gray-200, 0 0 0 20px $gray-600;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr;
+  grid-row-gap: 8px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__header {
+    @include border(5px, $gray-600, $white);
+    background-color: $gray-400;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: scroll;
+
+    .header__section {
+      @include flex-center;
+      flex: 1 0 0;
+    }
+  }
+
+  &__body {
+    box-shadow: 0px -4px 0 0px $gray-600, 0px -12px 0 0px $gray-200;
+    display: grid;
+
+    .square {
+      @include flex-center;
+      @include border(4px, $white, $gray-600);
+      background-color: $gray-200;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-size: 1.5rem;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      margin: 0;
+
+      &--clicked-mine {
+        background-color: $red;
+        border-width: 0;
+      }
+
+      &--mine {
+        background-image: url("../img/mine.svg");
+      }
+
+      &--flag {
+        background-image: url("../img/flag.png");
+      }
+
+      &--seen {
+        border-top-width: 0;
+        border-left-width: 0;
+      }
+
+      @for $i from 1 through 8 {
+        &--#{$i} {
+          @include colorSet($i);
+        }
+      }
+    }
+  }
+}
+
+.counter {
+  @include border(2px, $gray-600, $white);
+  display: flex;
+
+  &__digit {
+    @include full-size-background(16.5px, 31.5px);
+    border: 3px solid $black;
+    box-sizing: content-box;
+    @for $i from 0 through 9 {
+      &--#{$i} {
+        background-image: url("../img/numbers/d#{$i}.svg");
+      }
+    }
+  }
+}
+
+.emoji {
+  @include border(5px, $white, $gray-600);
+  background-color: $gray-200;
+  box-shadow: 0 0 0 2px $gray-600;
+  padding: 3px;
+  cursor: pointer;
+
+  .icon {
+    @include full-size-background(25px, 25px);
+
+    &--happy {
+      background-image: url("../img/smiley.png");
+    }
+    &--sad {
+      background-image: url("../img/sad.png");
+    }
+    &--cool {
+      background-image: url("../img/cool.png");
+    }
+  }
+
+  &:active {
+    @include border(2px, $gray-600, $gray-600);
+    border-top-width: 5px;
+    border-left-width: 5px;
+    transition: 0.1s;
+  }
+}
