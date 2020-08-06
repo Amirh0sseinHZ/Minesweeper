@@ -1,6 +1,6 @@
 ## How to Use
 
-Link `script.js` to your HTML file.
+Link `script.js` to your HTML file.  
 Then later:
 
 ```html
@@ -23,10 +23,10 @@ Then later:
 
 - `data-difficulty`: _String_ - Affects the number of mines distributed on the map
 
-      	-  `easy` about 10% of squares will be mines
+  - `easy` about 10% of squares will be mines
 
-      	-  `normal` about 15% of squares will be mines
+  - `normal` about 15% of squares will be mines
 
-      	-  `hard` about 20% of squares will be mines
+  - `hard` about 20% of squares will be mines
 
 - `data-debug`: _Boolean_ - Mines will be shown
