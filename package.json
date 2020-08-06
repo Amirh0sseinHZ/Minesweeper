@@ -2,6 +2,7 @@
   "name": "minesweeper",
   "version": "1.0.0",
   "description": "Classic minesweeper JS implementation",
+  "repository": "https://github.com/K1lleR8/Minesweeper.git",
   "main": "Minesweeper.js",
   "scripts": {
     "watch": "sass --watch --no-source-map css/minesweeper.scss css/style.css"
