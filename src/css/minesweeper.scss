@@ -1,0 +1,141 @@
+@import "base";
+
+.minesweeper {
+  font-family: $font-primary, "MS Sans Serif", serif;
+  box-shadow: 0 0 0 3px $white, 0 0 0 15px $gray-200, 0 0 0 20px $gray-600;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr;
+  grid-row-gap: 8px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__header {
+    @include border(5px, $gray-600, $white);
+    background-color: $gray-400;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: scroll;
+
+    .header__section {
+      @include flex-center;
+      flex: 1 0 0;
+    }
+  }
+
+  &__body {
+    box-shadow: 0px -4px 0 0px $gray-600, 0px -12px 0 0px $gray-200;
+    display: grid;
+
+    .square {
+      @include flex-center;
+      background-color: $gray-200 !important;
+      background: url("../sprites.png") -1px -1px;
+      background-repeat: no-repeat;
+      font-size: 1.5rem;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      margin: 0;
+
+      &--clicked-mine {
+        background-color: $red !important;
+      }
+
+      &--mine {
+        background-position: -1px -38px;
+      }
+
+      &--flag {
+        background-position: -38px -1px;
+      }
+
+      &--seen {
+        background-position: -38px -38px;
+      }
+
+      @for $i from 1 through 8 {
+        &--#{$i} {
+          @include colorSet($i);
+        }
+      }
+    }
+  }
+}
+
+.counter {
+  @include border(2px, $gray-600, $white);
+  display: flex;
+
+  &__digit {
+    @include full-size-background(16.5px, 31.5px);
+    background: url("../sprites.png") -102px -1px;
+    border: 3px solid $black;
+    box-sizing: content-box;
+    &--0 {
+      background-position: -102px -1px;
+    }
+    &--1 {
+      background-position: -102px -35px;
+    }
+    &--2 {
+      background-position: -96px -102px;
+    }
+    &--3 {
+      background-position: -121px -1px;
+    }
+    &--4 {
+      background-position: -121px -35px;
+    }
+    &--5 {
+      background-position: -1px -102px;
+    }
+    &--6 {
+      background-position: -20px -102px;
+    }
+    &--7 {
+      background-position: -39px -102px;
+    }
+    &--8 {
+      background-position: -58px -102px;
+    }
+    &--9 {
+      background-position: -77px -102px;
+    }
+  }
+}
+
+.emoji {
+  @include border(5px, $white, $gray-600);
+  background-color: $gray-200;
+  box-shadow: 0 0 0 2px $gray-600;
+  padding: 3px;
+  cursor: pointer;
+
+  .icon {
+    @include full-size-background(25px, 25px);
+    background: url("../sprites.png") -1px -75px;
+
+    &--happy {
+      background-position: -1px -75px;
+    }
+    &--sad {
+      background-position: -75px -28px;
+    }
+    &--cool {
+      background-position: -75px -1px;
+    }
+  }
+
+  &:active {
+    @include border(2px, $gray-600, $gray-600);
+    border-top-width: 5px;
+    border-left-width: 5px;
+    transition: 0.1s;
+  }
+}
