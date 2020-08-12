@@ -7,7 +7,7 @@ Here you can find the [online demo](https://m1nesweeper.netlify.app/) of the gam
 Link `script.js` to your HTML file.
 
 ```html
-<script src="/script.js" type="module"></script>
+<script src="src/js/script.bundle.js"></script>
 ```
 
 Then later:
