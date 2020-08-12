@@ -1,0 +1,13 @@
+@import "https://fonts.googleapis.com/css2?family=Spectral:wght@800&display=swap";
+
+@import "variables";
+@import "mixins";
+
+body {
+  @include flex-center;
+  background: #141e30;
+  background: -webkit-linear-gradient(to left, #243b55, #141e30);
+  background: linear-gradient(to left, #243b55, #141e30);
+  height: 100vh;
+  overflow: hidden;
+}
