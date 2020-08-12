@@ -4,7 +4,7 @@ Here you can find the [online demo](https://m1nesweeper.netlify.app/) of the gam
 
 ## How to Use
 
-Link `script.js` to your HTML file.
+Link `script.bundle.js` to your HTML file.
 
 ```html
 <script src="src/js/script.bundle.js"></script>
