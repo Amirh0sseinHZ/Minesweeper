@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-around;
     overflow-x: scroll;
+    overflow-y: hidden;
 
     .header__section {
       @include flex-center;
@@ -42,6 +43,7 @@
       outline: none;
       padding: 0;
       margin: 0;
+      user-select: none;
 
       &--clicked-mine {
         background-color: $red !important;
